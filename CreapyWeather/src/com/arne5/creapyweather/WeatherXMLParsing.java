@@ -56,7 +56,7 @@ public class WeatherXMLParsing extends Activity implements OnClickListener {
 			String information = doingWork.getInformation();
 			tv.setText(information);
 		}catch (Exception e){
-			tv.setText("error");
+			tv.setText("error setting weather");
 		}
 	}
 }
