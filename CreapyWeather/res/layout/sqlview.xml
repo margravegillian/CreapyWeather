@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+
+	<TableLayout android:layout_width="fill_parent" android:id="@+id/tableLayout1"
+		android:layout_height="fill_parent">
+		<TableRow>
+			<TextView android:text="Names" android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				></TextView>
+			<TextView android:text="Hotness" android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				></TextView>
+		</TableRow>
+	</TableLayout>
+	<TextView android:text="get info from db" android:id="@+id/tvSQLinfo"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"></TextView>
+
+
+
+
+</LinearLayout>
