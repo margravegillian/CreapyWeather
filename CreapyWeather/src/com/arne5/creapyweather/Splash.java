@@ -31,8 +31,8 @@ public class Splash extends Activity{
 				} catch (InterruptedException e){
 					e.printStackTrace();
 				}finally{
-					Intent openStartingPoint = new Intent("com.thenewboston.travis.MENU");
-					startActivity(openStartingPoint);
+					Intent openWeather = new Intent("com.arne5.creapyweather.WEATHERXMLPARSING");
+					startActivity(openWeather);
 				}
 			}
 		};
