@@ -37,6 +37,7 @@ public class WeatherXMLParsing extends Activity implements OnClickListener {
            state = (EditText)findViewById(R.id.etState);
            b.setOnClickListener(this);
            tvcon = (TextView)findViewById(R.id.tvCon);
+           
   
    }
 
@@ -44,6 +45,7 @@ public class WeatherXMLParsing extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		String c = city.getText().toString();
 		String s = state.getText().toString();
+		String sun ="Mostly Sunny";
 		
 		StringBuilder URL = new StringBuilder(baseURL);
 		URL.append(c + "," + s);
@@ -65,12 +67,24 @@ public class WeatherXMLParsing extends Activity implements OnClickListener {
 			xr.parse(new InputSource(website.openStream()));
 			String information = doingWork.getInformation();
 			
+			
 			tvcon.setText(conditioninfo);
+			//set some variables to check and play sound
+			
+			
+			
+			// get the tvcon text and see if it equals sun string.
+			if(tvcon.getText().toString().equals(sun))
+				CreapySound.playCloudy();
+			
+			
+			
 			tv.setText(information);
-			CreapySound.playCloudy();
+			//CreapySound.playCloudy();
 			
 		}catch (Exception e){
 			tv.setText("error setting weather");
 		}
+		
 	}
 }
