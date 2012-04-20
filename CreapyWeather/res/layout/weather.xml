@@ -20,4 +20,10 @@
 		android:textAppearance="?android:attr/textAppearanceLarge"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
 
+	<TextView
+	    android:id="@+id/tvCon"
+	    android:layout_width="100dp"
+	    android:layout_height="wrap_content"
+	    android:text="Condition" />
+
 </LinearLayout>

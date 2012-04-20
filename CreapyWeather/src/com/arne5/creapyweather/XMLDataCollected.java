@@ -15,8 +15,11 @@ public class XMLDataCollected {
 	public void setCondition(String con){
 		condition = con;
 	}
+	public String conditionToString(){
+		return condition;
+	}
 	
 	public String dataToString(){
-		return "In " + city + " the Current Temp in F is " + temp + " degrees, It is currently "+ condition;
+		return "In " + city + " the Current Temp is "+ temp + "F";
 	}	
 }

@@ -10,6 +10,10 @@ public class WeatherXMLHandler extends DefaultHandler{
 
 	private XMLDataCollected info = new XMLDataCollected();
 	
+	public String conditionInfo(){
+		return info.conditionToString();
+	}
+	
 	public String getInformation(){
 		return info.dataToString();
 	}

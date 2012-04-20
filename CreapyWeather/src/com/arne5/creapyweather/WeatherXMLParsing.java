@@ -21,6 +21,7 @@ public class WeatherXMLParsing extends Activity implements OnClickListener {
 	static final String baseURL = "http://www.google.com/ig/api?weather=";
 	 TextView tv;
 	 EditText city, state;
+	 TextView tvcon;
 	 
 	
    /** Called when the activity is first created. */
@@ -35,6 +36,7 @@ public class WeatherXMLParsing extends Activity implements OnClickListener {
            city = (EditText)findViewById(R.id.etCity);
            state = (EditText)findViewById(R.id.etState);
            b.setOnClickListener(this);
+           tvcon = (TextView)findViewById(R.id.tvCon);
   
    }
 
@@ -52,10 +54,18 @@ public class WeatherXMLParsing extends Activity implements OnClickListener {
 			SAXParserFactory spf = SAXParserFactory.newInstance();
 			SAXParser sp = spf.newSAXParser();
 			XMLReader xr = sp.getXMLReader();
+			
+			WeatherXMLHandler conditionWork = new WeatherXMLHandler();
+			xr.setContentHandler(conditionWork);
+			xr.parse(new InputSource(website.openStream()));
+			String conditioninfo= conditionWork.conditionInfo();
+			
 			WeatherXMLHandler doingWork = new WeatherXMLHandler();
 			xr.setContentHandler(doingWork);
 			xr.parse(new InputSource(website.openStream()));
 			String information = doingWork.getInformation();
+			
+			tvcon.setText(conditioninfo);
 			tv.setText(information);
 			CreapySound.playCloudy();
 			
