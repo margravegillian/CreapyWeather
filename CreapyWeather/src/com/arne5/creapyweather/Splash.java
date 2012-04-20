@@ -12,10 +12,13 @@ public class Splash extends Activity{
 	MediaPlayer ourSong;
 	
 	@Override
-	protected void onCreate(Bundle TravisLoveBacon) {
+	protected void onCreate(Bundle bun) {
 		// TODO Auto-generated method stub
-		super.onCreate(TravisLoveBacon);
+		super.onCreate(bun);
 		setContentView(R.layout.splash);
+		
+		//load the sound in creapy sound?
+		
 		ourSong = MediaPlayer.create(Splash.this, R.raw.eye);
 		
 		SharedPreferences getPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
