@@ -6,7 +6,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 
 
-public class HandlingXMLStuff extends DefaultHandler{
+public class WeatherXMLHandler extends DefaultHandler{
 
 	private XMLDataCollected info = new XMLDataCollected();
 	
@@ -17,8 +17,10 @@ public class HandlingXMLStuff extends DefaultHandler{
 	@Override
 	public void startElement(String uri, String localName, String qName,
 			Attributes attributes) throws SAXException {
-		// TODO Auto-generated method stub
 		
+		
+		// TODO Auto-generated method stub
+		//old way try a case statement
 		if (localName.equals("city")){
 			String city = attributes.getValue("data");
 			info.setCity(city);
@@ -27,6 +29,12 @@ public class HandlingXMLStuff extends DefaultHandler{
 			int temp = Integer.parseInt(t);
 			info.setTemp(temp);
 		}
+		else if (localName.equals("condition")){
+			String condition = attributes.getValue("data");
+			info.setCondition(condition);
+			
+	}
+				
 		
 	}	
 	
