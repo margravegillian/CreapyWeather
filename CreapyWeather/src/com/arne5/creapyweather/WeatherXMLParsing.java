@@ -54,17 +54,15 @@ public class WeatherXMLParsing extends Activity implements OnClickListener {
 			SAXParserFactory spf = SAXParserFactory.newInstance();
 			SAXParser sp = spf.newSAXParser();
 			XMLReader xr = sp.getXMLReader();
-
-			WeatherXMLHandler conditionWork = new WeatherXMLHandler();
-			xr.setContentHandler(conditionWork);
-			xr.parse(new InputSource(website.openStream()));
-			String conditioninfo = conditionWork.conditionInfo();
-
+			
 			WeatherXMLHandler doingWork = new WeatherXMLHandler();
 			xr.setContentHandler(doingWork);
 			xr.parse(new InputSource(website.openStream()));
 			String information = doingWork.getInformation();
+			String conditioninfo= doingWork.conditionInfo();
+			
 
+			//tvcon.setText(conditioninfo);
 			tvcon.setText(conditioninfo);
 			
 
